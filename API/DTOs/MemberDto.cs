@@ -1,16 +1,11 @@
-using API.Extensions;
-
-namespace API.Entities
+namespace API.DTOs
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
-
-        public DateOnly DateOfBirth { get; set; }
+        public string PhotoUrl { get; set; }
+        public int Age { get; set; }
 
         public string KnownAs { get; set; }
 
@@ -30,10 +25,7 @@ namespace API.Entities
 
         public string Country { get; set; }
 
-        public List<Photo> Photos { get; set; } = new();
+        public List<PhotoDto> Photos { get; set; } 
 
-       // public int GetAge(){
-       //     return DateOfBirth.CalculateAge();
-       // }
     }
 }
