@@ -44,10 +44,6 @@ namespace API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public void Update(AppUser user)
-        {
-            _context.Entry(user).State = EntityState.Modified;
-        }
 
 
         public async Task<MemberDto> GetMemberAsync(string username)
@@ -62,6 +58,10 @@ namespace API.Data
             return await _context.Users
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
+        }
+        public void Update(AppUser user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
         }
     }
 }
