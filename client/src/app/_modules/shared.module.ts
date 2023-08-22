@@ -5,7 +5,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {TabsModule} from 'ngx-bootstrap/tabs'
 import { NgxGalleryAction, NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
-
+import {  FileUploadModule } from 'ng2-file-upload'
 
 
 @NgModule({
@@ -20,7 +20,9 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     NgxGalleryModule,
     NgxSpinnerModule.forRoot({
       type: 'line-scale-party'
-    })
+    }),
+    FileUploadModule
+    
   ],
   exports: [
     BsDropdownModule,
@@ -28,6 +30,8 @@ import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
     TabsModule,
     NgxGalleryModule,
     NgxSpinnerModule,
+    FileUploadModule
+   
     
   ],
 })
